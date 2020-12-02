@@ -1,0 +1,8 @@
+secrets.py
+*.sqlite3
+*.sql
+*.pyc
+__pycache__
+.vscode/
+*~
+./.venv
