@@ -4,7 +4,7 @@ Roxanna Coldiron - Solo Project Proposal
 Summary Paragraph:
 ------------------
 
-My project will be a generic quoting tool for a business website, where the user can select products and then receive a quote for them, similar to an e-commerce experience. 
+My project will be a generic quoting tool for a business website, where the user can select products and then receive a quote for them, similar to an e-commerce experience. Superusers will be able to add new products or services in the Django admin. When a customer requests a quote from a product/service page, the product/service choice will be pre-selected for them on the quote request form.
 
 Features List:
 --------------
