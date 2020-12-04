@@ -34,4 +34,5 @@ What's new to me
 ----------------
 - Django Admin
 - Django User and Authentication (built-in)
+- Django Forms (forms.py)
 - Sass
