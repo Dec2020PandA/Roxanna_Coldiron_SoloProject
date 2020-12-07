@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'demo_site.urls'
@@ -83,6 +85,13 @@ DATABASES = {
     }
 }
 
+# Email Backend (Dev)
+# For production, comment this out and set up a full email
+# backend https://docs.djangoproject.com/en/2.2/topics/email/
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+FROM_EMAIL = 'Placeholder <placeholder@example.com>'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -121,3 +130,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Media
+MEDIA_URL = '/media/' 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
