@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, HttpResponse
+from .forms import UserCreateForm
 
 
 def index(request):
@@ -15,12 +15,12 @@ def contact(request):
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserCreateForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, 'Account created successfully')
     else:
-        form = UserCreationForm()
+        form = UserCreateForm()
         context = {
             "regForm": form
         }
