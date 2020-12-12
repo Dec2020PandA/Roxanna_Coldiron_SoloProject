@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Services</h1>
+    {% for service in services %}
+    <p>{{service.name}}</p>
+    {%endfor %}
+{% endblock %}
