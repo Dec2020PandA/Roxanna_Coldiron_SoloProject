@@ -9,4 +9,4 @@ def main(request):
     return render(request, "quote.html", context)
 
 def thankyou(request):
-    return HttpResponse("Thank you")
+    return render(request, "thankyou.html")

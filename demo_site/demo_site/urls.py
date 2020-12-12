@@ -20,4 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('website.urls')),
     path('quote/', include('request_quote.urls')),
+    path('accounts/', include('accounts.urls')),
+    # localhost:8000/accounts/ **pulls in built-in auth urls** 
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
