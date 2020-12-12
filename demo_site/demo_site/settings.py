@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
+    'djrichtextfield',
 ]
 
 MIDDLEWARE = [
@@ -125,6 +126,19 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+# Django RichTextField Settings
+DJRICHTEXTFIELD_CONFIG = {
+    'js': ['//cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js'],
+    'init_template': 'djrichtextfield/init/tinymce.js',
+    'settings': {
+        'menubar': False,
+        'plugins': 'link image',
+        'toolbar': 'bold italic | link image | removeformat',
+        'width': 700
+    }
+}
 
 
 # Static files (CSS, JavaScript, Images)

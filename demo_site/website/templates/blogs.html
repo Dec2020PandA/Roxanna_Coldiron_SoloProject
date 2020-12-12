@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Blogs</h1>
+    {% for blog in all_blogs %}
+        {{ blog.title }}
+        {{ blog.subtitle }}
+        {{ blog.author.first_name }} {{ blog.author.last_name }}
+        {% if blog.featured_image %}
+        <img src="{{blog.featured_image.url}}" class="img-responsive">
+        {% endif %}
+        {{ blog.body }}
+    {% endfor %}
+    
+{% endblock %}

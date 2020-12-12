@@ -10,4 +10,6 @@ urlpatterns = [
     path('services/', views.services),
     # localhost:8000/contact/
     path('contact/', views.contact), 
+    # localhost:8000/blog/
+    path('blog/', views.blog)
 ]

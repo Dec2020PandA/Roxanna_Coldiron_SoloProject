@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, HttpResponse
 from .forms import RegisterForm
+from .models import Author, Blog
 from request_quote.models import Item
 
 
@@ -23,3 +24,9 @@ def services(request):
 
 def contact(request):
     return render(request, "contact.html")
+
+def blog(request):
+    context = {
+        'all_blogs': Blog.objects.all()
+    }
+    return render(request, "blogs.html", context)
