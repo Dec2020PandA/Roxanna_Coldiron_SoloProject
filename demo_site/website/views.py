@@ -13,17 +13,18 @@ def index(request):
     }
     return render(request, "home.html", context)
 
-def about(request):
-    return render(request, "about.html")
-
 def services(request):
     context = {
         'services': Item.objects.all()
     }
     return render(request, "services.html", context)
 
-def contact(request):
-    return render(request, "contact.html")
+def single(request, service_id):
+    service = Item.objects.get(id=service_id)
+    context = {
+        'service': service
+    }
+    return render(request, "single_service.html", context)
 
 def blog(request):
     context = {

@@ -1,15 +1,29 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-    <h1>Blogs</h1>
-    {% for blog in all_blogs %}
-        {{ blog.title }}
-        {{ blog.subtitle }}
-        {{ blog.author.first_name }} {{ blog.author.last_name }}
-        {% if blog.featured_image %}
-        <img src="{{blog.featured_image.url}}" class="img-responsive">
-        {% endif %}
-        {{ blog.body | safe }}
-    {% endfor %}
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col">
+            <h2 class="display-4 pl-3">Blogs</h2>
+        </div>
+    </div>
+    <div class="row">
+        {% for blog in all_blogs %}
+        <div class="col border border-success m-4">
+            <h3>{{ blog.title }}</h3>
+            <h5 class="text-muted">{{ blog.subtitle }}</h5>
+            <p>{{ blog.author.first_name }} {{ blog.author.last_name }}</p>
+            {% if blog.featured_image %}
+                <img src="{{ blog.featured_image.url }}" class="img-responsive">
+            {% endif %}
+            <div>
+                {{ blog.body | safe }}
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
     
 {% endblock %}

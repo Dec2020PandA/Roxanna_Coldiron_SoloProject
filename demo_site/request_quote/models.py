@@ -14,4 +14,5 @@ class Item(models.Model):
     class Meta:
         ordering = ['name']
 
+# next feature
 # QuoteRequest(models.Model):

@@ -1,8 +1,68 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-    <h1>Home Page</h1>
-    {% for service in services %}
-    <p>{{service.name}}</p>
-    {%endfor %}
+    <div class="container-fluid">
+        <div class="row jumbotron jumbotron-fluid py-5 bg-warning" style="background-image:url({% static 'img/stylish-pets-removebg-preview.png' %});background-position:center center; background-size:contain;background-repeat:no-repeat;">
+            <div class="col-6 pt-4">
+                <h2 class="pl-3 display-3 text-white">Welcome to Dog & Cat Beauty Salon!</h2>
+               
+            </div>
+            <div class="col-6 pt-4">
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col py-5">
+                <h2 class="display-4 pl-3">About Us</h2>
+                <p class="p-3">
+                    Stares at human while pushing stuff off a table meow, i like fish for sun bathe, 
+                    so claw drapes. Kitty loves pigs lies down cat jumps and falls onto the couch purrs 
+                    and wakes up in a new dimension filled with kitty litter meow meow yummy there is a bunch 
+                    of cats hanging around eating catnip so try to hold own back foot to clean it but foot reflexively 
+                    kicks you in face, go into a rage and bite own foot, hard. Small kitty warm kitty little balls of 
+                    fur brown cats with pink ears. Attack like a vicious monster thug cat purr when give birth eat 
+                    and than sleep on your face i'm going to lap some water out of my master's cup meow
+                </p>
+                <p class="p-3">
+                    Stares at human while pushing stuff off a table meow, i like fish for sun bathe, 
+                    so claw drapes. Kitty loves pigs lies down cat jumps and falls onto the couch purrs 
+                    and wakes up in a new dimension filled with kitty litter meow meow yummy there is a bunch 
+                    of cats hanging around eating catnip so try to hold own back foot to clean it but foot reflexively 
+                    kicks you in face, go into a rage and bite own foot, hard. Small kitty warm kitty little balls of 
+                    fur brown cats with pink ears. Attack like a vicious monster thug cat purr when give birth eat 
+                    and than sleep on your face i'm going to lap some water out of my master's cup meow
+                </p>
+                <h3 class="pt-3">OUR MOTTO: WE LOVE ANIMALS!</h3>
+            </div>
+        </div>
+        <div class="row bg-pink">
+            <div class="col">
+                <img src="{% static 'img/pet-banner.jpg' %}">
+            </div>
+        </div>
+        <div class="row py-3">
+            <div class="col-12">
+                <h2 class="display-4 pl-3">Services</h2>
+                <div class="card-deck py-5">
+                    {% for service in services %}
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                            <h4 class="card-title display-5">{{service.name}}</h4>
+                            <a href="/services/{{service.id}}" class="btn btn-success">View Service</a>
+                            </div>
+                        </div>
+                    {%endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row py-3 bg-success text-white">
+            <div class="col pl-3">
+                <h2 class="display-4">Contact Us</h2>
+                <p class="display-5">Send us an email or give us a call!</p>
+                <p class="display-5">Email: <a href="mailto:email@example.com" class="email">Amy Marie</a></p>
+                <p class="display-5">Phone: 330-222-2222</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}

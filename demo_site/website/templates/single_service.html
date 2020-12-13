@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container py-4">
+        <div class="row text-center">
+            <div class="col-12 mb-3">
+                <h1 class="display-3">{{ service.name }}</h1>
+                <img src="{{ service.image.url }}" width="400">
+            </div>
+            <div class="col-12">
+                <p>{{ service.description | safe }}</p>
+                <a class="btn btn-success btn-large mx-2 text-white" href="/quote/">Request A Quote</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
