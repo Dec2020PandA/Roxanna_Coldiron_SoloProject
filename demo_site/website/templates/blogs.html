@@ -9,7 +9,7 @@
         {% if blog.featured_image %}
         <img src="{{blog.featured_image.url}}" class="img-responsive">
         {% endif %}
-        {{ blog.body }}
+        {{ blog.body | safe }}
     {% endfor %}
     
 {% endblock %}
