@@ -10,7 +10,7 @@
     </div>
     <div class="row">
         {% for blog in all_blogs %}
-        <div class="col border border-success m-4">
+        <div class="col border border-success m-4 pb-3">
             <h3>{{ blog.title }}</h3>
             <h5 class="text-muted">{{ blog.subtitle }}</h5>
             <p>{{ blog.author.first_name }} {{ blog.author.last_name }}</p>
@@ -20,6 +20,7 @@
             <div>
                 {{ blog.body | safe }}
             </div>
+            <a href="/blog/{{blog.id}}" class="btn btn-success">Read More</a>
         </div>
         {% endfor %}
 
